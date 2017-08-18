@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVN-M8-5Sm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Light</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="1kj-hJ-rGJ">
+            <objects>
+                <tableViewController id="1oI-hr-FOK" customClass="MessagesViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yjy-3h-O3v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="dGI-Vs-tgX">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="ujk-gI-Ysj">
+                                    <barButtonItem key="leftBarButtonItem" title="Sign Out" width="40" id="r23-Zt-kEa">
+                                        <color key="tintColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="signOutPressed:" destination="1oI-hr-FOK" id="Oy0-aQ-m2N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VbB-hb-1tC">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VbB-hb-1tC" id="dcF-Jy-3Bt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1oI-hr-FOK" id="VMJ-BV-TgB"/>
+                            <outlet property="delegate" destination="1oI-hr-FOK" id="VIj-AY-53C"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="bVN-M8-5Sm" kind="presentation" identifier="signOut" id="Tkq-TN-etk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7N7-Ne-UmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1295" y="-71"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="hhq-pg-WhV">
+            <objects>
+                <viewController id="bVN-M8-5Sm" customClass="LogInViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F2E-Y1-Fen">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JMy-Os-4Zj">
+                                <rect key="frame" x="50" y="273.5" width="275" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UmQ-ch-Lg7" customClass="LeftPaddedTextField" customModule="ChatApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="74i-9K-mWI"/>
+                                            <constraint firstAttribute="height" constant="50" id="L2Y-rD-adR"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ike-rc-mSh" customClass="LeftPaddedTextField" customModule="ChatApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="70" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="AfP-tI-Zof"/>
+                                            <constraint firstAttribute="height" constant="50" id="TlN-eB-msT"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3b8-PP-lKd">
+                                <rect key="frame" x="47" y="511" width="281" height="56"/>
+                                <state key="normal" image="LogInButton"/>
+                                <connections>
+                                    <action selector="logInPressed:" destination="bVN-M8-5Sm" eventType="touchUpInside" id="yrC-dy-nzm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxH-zb-RNB">
+                                <rect key="frame" x="154.5" y="617" width="67" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="UQw-jh-bTx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="singUpPressed:" destination="bVN-M8-5Sm" eventType="touchUpInside" id="L7e-8i-voI"/>
+                                    <segue destination="nlt-lZ-OfC" kind="presentation" identifier="goToSignUp" modalTransitionStyle="flipHorizontal" id="mtf-NM-jbl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chat.Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vId-FZ-65p">
+                                <rect key="frame" x="87" y="40" width="200" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bGN-SY-h0c"/>
+                                    <constraint firstAttribute="height" constant="170" id="kbK-C6-CIo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7W-VO-O1g">
+                                <rect key="frame" x="136" y="575" width="102" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="gFI-Y7-qoa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                <state key="normal" title="Forgot your password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="388-LJ-zGc" kind="presentation" modalTransitionStyle="flipHorizontal" id="GMa-RY-7TH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="N8q-fU-gh3" firstAttribute="bottom" secondItem="MxH-zb-RNB" secondAttribute="bottom" constant="30" id="3I5-eT-78e"/>
+                            <constraint firstItem="3b8-PP-lKd" firstAttribute="centerX" secondItem="F2E-Y1-Fen" secondAttribute="centerX" id="7P0-Vr-jhV"/>
+                            <constraint firstItem="MxH-zb-RNB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="R7W-VO-O1g" secondAttribute="bottom" constant="30" id="EJB-r8-EH3"/>
+                            <constraint firstItem="vId-FZ-65p" firstAttribute="top" secondItem="N8q-fU-gh3" secondAttribute="top" constant="20" id="PIB-VI-EIu"/>
+                            <constraint firstItem="R7W-VO-O1g" firstAttribute="top" secondItem="3b8-PP-lKd" secondAttribute="bottom" constant="8" id="cgO-5y-DLV"/>
+                            <constraint firstItem="MxH-zb-RNB" firstAttribute="centerX" secondItem="F2E-Y1-Fen" secondAttribute="centerX" id="i9h-ng-6YA"/>
+                            <constraint firstItem="R7W-VO-O1g" firstAttribute="centerX" secondItem="F2E-Y1-Fen" secondAttribute="centerX" id="mnL-6p-5BZ"/>
+                            <constraint firstItem="JMy-Os-4Zj" firstAttribute="centerX" secondItem="F2E-Y1-Fen" secondAttribute="centerX" id="mps-yl-STy"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3b8-PP-lKd" secondAttribute="bottom" constant="100" id="rdp-xX-9Ua"/>
+                            <constraint firstItem="vId-FZ-65p" firstAttribute="centerX" secondItem="F2E-Y1-Fen" secondAttribute="centerX" id="u18-gg-cHX"/>
+                            <constraint firstItem="JMy-Os-4Zj" firstAttribute="centerY" secondItem="F2E-Y1-Fen" secondAttribute="centerY" id="yDI-yY-dui"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N8q-fU-gh3"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="UmQ-ch-Lg7" id="3bt-K6-qXZ"/>
+                        <outlet property="passwordTextField" destination="ike-rc-mSh" id="qro-5G-QYV"/>
+                        <segue destination="1oI-hr-FOK" kind="showDetail" identifier="goToChatFromLogIn" id="cck-o6-ndb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJm-hl-P8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="-70"/>
+        </scene>
+        <!--Password Reset View Controller-->
+        <scene sceneID="G7f-Hs-VP9">
+            <objects>
+                <viewController id="388-LJ-zGc" customClass="PasswordResetViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hxw-Tj-FJP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUJ-SS-dDr">
+                                <rect key="frame" x="16" y="36" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4pu-ro-uhx"/>
+                                    <constraint firstAttribute="width" constant="20" id="W33-9c-60a"/>
+                                </constraints>
+                                <state key="normal" image="CancelButtonWhite"/>
+                                <connections>
+                                    <segue destination="hS5-V5-951" kind="unwind" unwindAction="unwindFromPasswordResetViewControllerWithUnwindSegue:" id="hlR-IG-38W"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="MoV-T7-Mpo">
+                                <rect key="frame" x="50" y="199" width="275" height="270"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To reset your password, please enter your email:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQk-Wr-cq4">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="rQV-jn-BZB"/>
+                                            <constraint firstAttribute="width" constant="275" id="xvV-Jd-LeN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter email" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="DIz-b1-MF5" customClass="LeftPaddedTextField" customModule="ChatApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="110" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="Ive-iP-KYG"/>
+                                            <constraint firstAttribute="height" constant="50" id="OYY-ov-XAR"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsC-m2-oCw">
+                                        <rect key="frame" x="0.0" y="220" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Q2b-pp-iLC"/>
+                                            <constraint firstAttribute="width" constant="275" id="jqd-Pu-Cys"/>
+                                        </constraints>
+                                        <state key="normal" image="Reset Button Copy"/>
+                                        <connections>
+                                            <action selector="resetPressed:" destination="388-LJ-zGc" eventType="touchUpInside" id="f61-5G-2li"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BUJ-SS-dDr" firstAttribute="leading" secondItem="4AJ-IB-eks" secondAttribute="leading" constant="16" id="6nY-Ja-gy4"/>
+                            <constraint firstItem="MoV-T7-Mpo" firstAttribute="centerY" secondItem="Hxw-Tj-FJP" secondAttribute="centerY" id="8fc-bK-ZHw"/>
+                            <constraint firstItem="BUJ-SS-dDr" firstAttribute="top" secondItem="4AJ-IB-eks" secondAttribute="top" constant="16" id="Yr5-4w-chB"/>
+                            <constraint firstItem="MoV-T7-Mpo" firstAttribute="centerX" secondItem="Hxw-Tj-FJP" secondAttribute="centerX" id="l3b-9c-fdW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4AJ-IB-eks"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y9j-Op-S2s"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="DIz-b1-MF5" id="XRY-y9-k7I"/>
+                        <segue destination="bVN-M8-5Sm" kind="presentation" identifier="passwordResetGoToLogIn" modalTransitionStyle="flipHorizontal" id="8Pl-vO-BJG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dXq-5U-Yfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hS5-V5-951" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="733"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="ZGU-1l-LAz">
+            <objects>
+                <viewController id="nlt-lZ-OfC" customClass="SignUpViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0qj-3n-ghN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew6-Ui-2UF">
+                                <rect key="frame" x="50" y="567" width="275" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="see-fp-Oru"/>
+                                    <constraint firstAttribute="height" constant="50" id="yM7-lq-Dbc"/>
+                                </constraints>
+                                <state key="normal" image="GetStartedButton"/>
+                                <connections>
+                                    <action selector="getStartedPressed:" destination="nlt-lZ-OfC" eventType="touchUpInside" id="YVi-1m-d6r"/>
+                                    <action selector="logInPressed:" destination="bVN-M8-5Sm" eventType="touchUpInside" id="yup-T0-IMM"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KLg-EX-t9g">
+                                <rect key="frame" x="50" y="337" width="275" height="190"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="z6f-Qp-Cbk" customClass="LeftPaddedTextField" customModule="ChatApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="gGU-5z-H38"/>
+                                            <constraint firstAttribute="height" constant="50" id="jdB-mn-iUr"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XU4-15-L6D" customClass="LeftPaddedTextField" customModule="ChatApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="70" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="E3s-Oa-bQm"/>
+                                            <constraint firstAttribute="height" constant="50" id="jsj-Io-KKR"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-OM-bQN" customClass="LeftPaddedTextField" customModule="ChatApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="140" width="275" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="OHk-qM-nPi"/>
+                                            <constraint firstAttribute="height" constant="50" id="gEf-xX-sjm"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="YbU-Fy-UvX"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMc-zb-rWh">
+                                <rect key="frame" x="16" y="36" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Ytv-Nr-cJ4"/>
+                                    <constraint firstAttribute="height" constant="20" id="bdh-Tc-Tcn"/>
+                                </constraints>
+                                <state key="normal" image="CancelButtonBlue"/>
+                                <connections>
+                                    <segue destination="Q7i-yX-7aM" kind="unwind" unwindAction="unwindFromSignUpViewControllerWithUnwindSegue:" id="QTM-JI-vKz"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OKr-Jv-tQa">
+                                <rect key="frame" x="112" y="120" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9v2-Gb-pPX"/>
+                                    <constraint firstAttribute="height" constant="150" id="nAn-W9-7mQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KLg-EX-t9g" firstAttribute="centerX" secondItem="0qj-3n-ghN" secondAttribute="centerX" id="2Y0-94-z7e"/>
+                            <constraint firstItem="OKr-Jv-tQa" firstAttribute="top" secondItem="Dou-9x-piu" secondAttribute="top" constant="100" id="31r-3t-Wox"/>
+                            <constraint firstItem="OMc-zb-rWh" firstAttribute="top" secondItem="0qj-3n-ghN" secondAttribute="topMargin" constant="16" id="36J-Ap-2hu"/>
+                            <constraint firstItem="ew6-Ui-2UF" firstAttribute="centerX" secondItem="0qj-3n-ghN" secondAttribute="centerX" id="4Im-iO-Rne"/>
+                            <constraint firstItem="OKr-Jv-tQa" firstAttribute="centerX" secondItem="0qj-3n-ghN" secondAttribute="centerX" id="8pP-MP-H13"/>
+                            <constraint firstItem="OMc-zb-rWh" firstAttribute="leading" secondItem="Dou-9x-piu" secondAttribute="leading" constant="16" id="OOL-zV-TfU"/>
+                            <constraint firstItem="ew6-Ui-2UF" firstAttribute="top" secondItem="KLg-EX-t9g" secondAttribute="bottom" constant="40" id="qhp-zk-At3"/>
+                            <constraint firstItem="Dou-9x-piu" firstAttribute="bottom" secondItem="ew6-Ui-2UF" secondAttribute="bottom" constant="50" id="van-3L-lx5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dou-9x-piu"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="XU4-15-L6D" id="Rvi-1X-kRH"/>
+                        <outlet property="nameTextField" destination="z6f-Qp-Cbk" id="bQ9-hw-Uhc"/>
+                        <outlet property="passwordTextField" destination="oMR-OM-bQN" id="OSX-EA-qfM"/>
+                        <segue destination="1oI-hr-FOK" kind="showDetail" identifier="goToChatFromSignUp" id="MoR-Am-bTD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbM-2R-vdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Q7i-yX-7aM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="-738"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CancelButtonBlue" width="32" height="32"/>
+        <image name="CancelButtonWhite" width="32" height="32"/>
+        <image name="Chat.Logo" width="258" height="218"/>
+        <image name="GetStartedButton" width="281" height="56"/>
+        <image name="LogInButton" width="281" height="56"/>
+        <image name="Reset Button Copy" width="279" height="54"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8Pl-vO-BJG"/>
+        <segue reference="cck-o6-ndb"/>
+    </inferredMetricsTieBreakers>
+</document>
