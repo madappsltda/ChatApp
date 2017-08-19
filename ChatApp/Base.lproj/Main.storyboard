@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Messages View Controller-->
+        <!--Messages-->
         <scene sceneID="1kj-hJ-rGJ">
             <objects>
                 <tableViewController id="1oI-hr-FOK" customClass="MessagesViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,23 +26,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="dGI-Vs-tgX">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Title" id="ujk-gI-Ysj">
-                                    <barButtonItem key="leftBarButtonItem" title="Sign Out" width="40" id="r23-Zt-kEa">
-                                        <color key="tintColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="signOutPressed:" destination="1oI-hr-FOK" id="Oy0-aQ-m2N"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VbB-hb-1tC">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VbB-hb-1tC" id="dcF-Jy-3Bt">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -55,13 +41,27 @@
                             <outlet property="delegate" destination="1oI-hr-FOK" id="VIj-AY-53C"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Messages" id="yYp-ON-rPz">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" width="40" id="r23-Zt-kEa">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="signOutPressed:" destination="1oI-hr-FOK" id="Oy0-aQ-m2N"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="idW-gl-GDj">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="signOutPressed:" destination="1oI-hr-FOK" id="EWE-zq-01P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="bVN-M8-5Sm" kind="presentation" identifier="signOut" id="Tkq-TN-etk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7N7-Ne-UmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1295" y="-71"/>
+            <point key="canvasLocation" x="2209" y="-72"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="hhq-pg-WhV">
@@ -157,7 +157,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="UmQ-ch-Lg7" id="3bt-K6-qXZ"/>
                         <outlet property="passwordTextField" destination="ike-rc-mSh" id="qro-5G-QYV"/>
-                        <segue destination="1oI-hr-FOK" kind="showDetail" identifier="goToChatFromLogIn" id="cck-o6-ndb"/>
+                        <segue destination="kPr-YF-DFz" kind="showDetail" identifier="goToChatFromLogIn" id="cck-o6-ndb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJm-hl-P8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,13 +332,35 @@
                         <outlet property="emailTextField" destination="XU4-15-L6D" id="Rvi-1X-kRH"/>
                         <outlet property="nameTextField" destination="z6f-Qp-Cbk" id="bQ9-hw-Uhc"/>
                         <outlet property="passwordTextField" destination="oMR-OM-bQN" id="OSX-EA-qfM"/>
-                        <segue destination="1oI-hr-FOK" kind="showDetail" identifier="goToChatFromSignUp" id="MoR-Am-bTD"/>
+                        <segue destination="kPr-YF-DFz" kind="showDetail" identifier="goToChatFromSignUp" id="MoR-Am-bTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbM-2R-vdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Q7i-yX-7aM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="950" y="-738"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mmU-FF-859">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kPr-YF-DFz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8N4-HP-xBb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1oI-hr-FOK" kind="relationship" relationship="rootViewController" id="Yfi-N9-htq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wvs-Fy-D79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="118"/>
         </scene>
     </scenes>
     <resources>
@@ -350,7 +372,7 @@
         <image name="Reset Button Copy" width="279" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Pl-vO-BJG"/>
+        <segue reference="Tkq-TN-etk"/>
         <segue reference="cck-o6-ndb"/>
     </inferredMetricsTieBreakers>
 </document>
