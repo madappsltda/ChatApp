@@ -28,6 +28,8 @@ class MessagesViewController: UITableViewController {
             do {
                 try Auth.auth().signOut()
                 print("sign out sucessfull")
+                
+//                present(LogInViewController(), animated: true, completion: nil)
 
                 performSegue(withIdentifier: "signOut", sender: self)
                 //                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUp")

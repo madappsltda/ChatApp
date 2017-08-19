@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVN-M8-5Sm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1oI-hr-FOK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -55,13 +55,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <segue destination="bVN-M8-5Sm" kind="presentation" identifier="signOut" id="Tkq-TN-etk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7N7-Ne-UmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="-72"/>
+            <point key="canvasLocation" x="2204" y="-71"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="hhq-pg-WhV">
@@ -154,6 +155,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N8q-fU-gh3"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="emailTextField" destination="UmQ-ch-Lg7" id="3bt-K6-qXZ"/>
                         <outlet property="passwordTextField" destination="ike-rc-mSh" id="qro-5G-QYV"/>
@@ -238,7 +240,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXq-5U-Yfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hS5-V5-951" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-193" y="733"/>
+            <point key="canvasLocation" x="134" y="736"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ZGU-1l-LAz">
@@ -338,13 +340,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbM-2R-vdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Q7i-yX-7aM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="950" y="-738"/>
+            <point key="canvasLocation" x="1142" y="-629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mmU-FF-859">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kPr-YF-DFz" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8N4-HP-xBb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -360,7 +363,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvs-Fy-D79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134" y="118"/>
+            <point key="canvasLocation" x="1142" y="432"/>
         </scene>
     </scenes>
     <resources>
@@ -373,6 +376,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tkq-TN-etk"/>
-        <segue reference="cck-o6-ndb"/>
+        <segue reference="MoR-Am-bTD"/>
     </inferredMetricsTieBreakers>
 </document>
